@@ -9,6 +9,58 @@
 \usepackage{csquotes}
 \usepackage{xcolor}
 
+
+
+\usepackage[]{listings}
+
+%%%%%%%
+\definecolor{hellgelb}{rgb}{1,1,0.8}
+\definecolor{lightgelb}{rgb}{1,1,0.8}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{0,0,0}
+\definecolor{colComments}{rgb}{1,0,0}
+\definecolor{colString}{rgb}{0,0.5,0}
+
+
+\lstset{%
+    float=hbp,%
+    basicstyle=\ttfamily\footnotesize, %
+    identifierstyle=\color{colIdentifier}, %
+    keywordstyle=\color{colKeys}, %
+    stringstyle=\color{colString}, %
+    commentstyle=\color{colComments}, %
+    literate={fl}{{f{}l}}2,%
+    columns=flexible, %
+    tabsize=2, %
+    frame=single, %
+    upquote=true,%
+    extendedchars=true, %
+    showspaces=false, %
+    showstringspaces=false, %
+    numbers=left, %
+    numberstyle=\tiny, %
+    breaklines=true, %
+    backgroundcolor=\color{hellgelb}, %
+    breakautoindent=true, %
+    captionpos=b%
+}
+
+
+
+
+%%%%%%%%%%%%
+\lstset{literate=%
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+    {~}{{\textasciitilde}}1
+}
+
+
 \author{Uwe Ziegenhagen}
 \title{Briefvorlagen mit \texttt{scrlttr2}}
 
@@ -31,6 +83,13 @@
 \item erlaubt (leichte) Anpassung an Design-Vorgaben
 \item Ziel des Vortrags: komplexes Design umsetzen
 \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{}
+
+\lstinputlisting[language={[LaTeX]TeX},morekeywords={opening, closing}]{brief-01.tex}
+
 \end{frame}
 
 
