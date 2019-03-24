@@ -1,0 +1,84 @@
+%!TEX TS-program = XeLaTeX
+% 2015-10-31
+\documentclass[DIN,parskip=half,fontsize=11pt,fromalign=right,fromrule=afteraddress,ngerman,enlargefirstpage=true]{scrlttr2}
+ 
+\usepackage{varsfromjobname}
+\usepackage{qrcode}
+\usepackage{blindtext}
+\usepackage{eso-pic}
+\usepackage{lastpage}
+ 
+\usepackage{ifxetex}
+\ifxetex
+   \usepackage{fontspec}%
+   \usepackage{polyglossia}%
+   \usepackage{navigator}
+   \setmainlanguage[spelling=new]{german}%
+	\setmainfont[ItalicFont={Source Sans Pro Italic},BoldFont={Source Sans Pro Bold},BoldItalicFont={Source Sans Pro Bold Italic}]{Source Sans Pro}%
+\else
+   \usepackage{babel}
+   \usepackage{navigator}
+\fi
+ 
+\embeddedfile[TeX code]{\jobname}{\jobname.tex}
+ 
+\renewcommand{\familydefault}{\sfdefault}
+ 
+\firsthead{
+\textsc{Dr.~\usekomavar{fromname} \hfill \thepage/\pageref{LastPage}} 
+\vspace*{1em}
+\hrule
+}
+ 
+\setkomafont{pageheadfoot}{}
+ 
+\newkomavar{fromplace}
+\newkomavar{keywords}
+\newkomavar{IBAN}
+\newkomavar{BIC}
+ 
+\setkomavar{IBAN}[IBAN]{DE12\,3456\,0123\,1234\,1234\,99}
+\setkomavar{BIC}[BIC]{ABCDEFGHEI}
+ 
+ 
+\setkomavar{yourref}{xyz-203052}
+\setkomavar{yourmail}{\today}
+\setkomavar{myref}[Mein Zeichen]{1929424487}
+\setkomavar{fromname}{Max Mustermann}
+\setkomavar{fromplace}{Hamburg}
+\setkomavar{fromemail}{mustermann@gmail.com}
+\setkomavar{frommobilephone}[Mobil:]{+49 (0) 123\,456\,7890}
+\setkomavar{fromaddress}{Musterweg 19, 12345 Hamburg}
+\setkomavar{subject}{Betreff}
+\setkomavar{keywords}{Finanzamt}
+ 
+ 
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor={black},pdftitle={\usekomavar{subject}},pdfauthor={\usekomavar{fromname}}, % 
+    pdfsubject={\usekomavar{subject}},pdfkeywords={\usekomavar{keywords}}
+}
+ 
+\date{\usekomavar{fromplace}, \getfourfromjobname.\getthreefromjobname.\gettwofromjobname}
+ 
+\pagestyle{myheadings}
+ 
+\setkomavar{nexthead}{Dr.~\usekomavar{fromname}, \getfourfromjobname.\getthreefromjobname.\gettwofromjobname \hfill\thepage/\pageref{LastPage}}
+\setkomavar{nextfoot}{}
+ 
+ 
+\setkomavar{firstfoot}{%
+\hrule
+E-Mail: \usekomavar{fromemail} \hfill \usekomavar*{frommobilephone}~\usekomavar{frommobilephone} \newline
+\usekomavar*{IBAN}:~\usekomavar{IBAN}  \hfill \usekomavar*{BIC}:~\usekomavar{BIC}}
+ 
+\begin{document}
+\begin{letter}{Maria Mustermann \\ Musterweg 2 \\ 12345 Musterstadt}
+\opening{Sehr geehrte Damen und Herren,} 
+ 
+\blindtext[5]
+ 
+\closing{Mit freundlichen Grüßen}
+ 
+\encl{Kopie }
+\end{letter}
+\end{document}
