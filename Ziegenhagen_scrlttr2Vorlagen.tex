@@ -23,6 +23,8 @@
 
 
 \lstset{%
+		language={[LaTeX]TeX},%
+		morekeywords={opening, closing, setkomavar, getkomavar},%
     float=hbp,%
     basicstyle=\ttfamily\footnotesize, %
     identifierstyle=\color{colIdentifier}, %
@@ -81,16 +83,120 @@
 \item \LaTeX-Layout muss nicht (schlecht) sein!
 \item Für Briefe nutze ich \texttt{scrlttr2}, sehr flexibles Paket für Briefe
 \item erlaubt (leichte) Anpassung an Design-Vorgaben
-\item Ziel des Vortrags: komplexes Design umsetzen
+\item Ziel des Vortrags
+
+\begin{itemize}
+	\item Kurze Einführung in \texttt{scrlttr2}
+	\item Erstellung von Briefvorlagen
+\end{itemize}
+
+
 \end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{}
+\frametitle{Ein minimaler Brief}
 
-\lstinputlisting[language={[LaTeX]TeX},morekeywords={opening, closing}]{brief-01.tex}
+\lstinputlisting{brief-01.tex}
 
 \end{frame}
+
+\begin{frame}[plain]
+\frametitle{Ergebnis}
+
+\begin{center}
+\fbox{\includegraphics[trim=0cm 14cm 0cm 3cm, width=1\textwidth]{brief-01}}
+\end{center}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Vordefinierte Variablen}
+
+\texttt{scrlttr2} kennt eine Vielzahl vordefinierter Variablen, die sich befüllen lassen. Hier die wichtigsten: \vspace*{1em}
+
+\begin{columns}
+\begin{column}{0.3\textwidth}
+\begin{itemize}
+	\item backaddress
+	\item customer
+	\item date
+	\item firstfoot
+	\item firsthead
+	\item fromaddress
+	\item frombank
+	\item fromemail
+	\end{itemize}
+\end{column}
+\begin{column}{0.3\textwidth}
+\begin{itemize}
+	\item fromname
+	\item fromfax
+	\item fromphone
+	\item fromurl
+	\item invoice
+	\item location
+	\item myref
+	\item nextfoot
+	\end{itemize}
+\end{column}
+\begin{column}{0.3\textwidth}
+\begin{itemize}
+	\item nexthead
+	\item place
+	\item signature
+	\item subject
+	\item toname
+	\item toaddress
+	\item yourmail
+	\item yourref
+	\end{itemize}
+\end{column}
+
+\end{columns}
+
+\end{frame}
+
+\begin{frame}[containsverbatim]
+\frametitle{Setzen und Nutzen von Variablen}
+
+\begin{itemize}
+	\item \lstinline|\setkomavar{Variable}{Wert}| weist der Variablen einen Wert zu
+	\item \lstinline|\setkomavar{Variable}[Label]{Wert}| weist der Variablen einen Wert zu und setzt das Label
+	\item \lstinline|\setkomavar*{Variable}{Label}| ändert nur das Label
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Setzen des Absenders}
+
+\lstinputlisting{brief-02.tex}
+
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Ergebnis}
+
+\begin{center}
+\fbox{\includegraphics[trim=0cm 15cm 0cm 0cm, width=1\textwidth]{brief-02}}
+\end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Setzen des Absenders}
+
+\lstinputlisting{brief-03.tex}
+
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Ergebnis}
+
+\begin{center}
+\fbox{\includegraphics[trim=0cm 15cm 0cm 0cm, width=1\textwidth]{brief-03}}
+\end{center}
+\end{frame}
+
 
 
 \end{document}
