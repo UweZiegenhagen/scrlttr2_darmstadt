@@ -26,7 +26,7 @@
 		language={[LaTeX]TeX},%
 		morekeywords={opening, closing, setkomavar, usekomavar},%
     float=hbp,%
-    basicstyle=\ttfamily\footnotesize, %
+    basicstyle=\ttfamily,%\footnotesize, %
     identifierstyle=\color{colIdentifier}, %
     keywordstyle=\color{colKeys}, %
     stringstyle=\color{colString}, %
@@ -97,7 +97,7 @@
 \begin{frame}[fragile]
 \frametitle{Ein minimaler Brief}
 
-\lstinputlisting{brief-01.tex}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize]{brief-01.tex}
 
 \end{frame}
 
@@ -180,7 +180,7 @@
 \begin{frame}[fragile]
 \frametitle{Setzen des Absenders}
 
-\lstinputlisting{brief-02.tex}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize]{brief-02.tex}
 
 \end{frame}
 
@@ -195,7 +195,7 @@
 \begin{frame}[fragile]
 \frametitle{Setzen des Absenders}
 
-\lstinputlisting{brief-03.tex}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize]{brief-03.tex}
 
 \end{frame}
 
@@ -210,7 +210,7 @@
 \begin{frame}[fragile]
 \frametitle{Anpassen der Variablen-Labels}
 
-\lstinputlisting{brief-04.tex}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize]{brief-04.tex}
 
 \end{frame}
 
@@ -225,7 +225,7 @@
 \begin{frame}[fragile]
 \frametitle{Anpassen der Variablen-Labels}
 
-\lstinputlisting{brief-05.tex}
+\lstinputlisting[basicstyle=\ttfamily\footnotesize]{brief-05.tex}
 
 \end{frame}
 
@@ -236,5 +236,43 @@
 \fbox{\includegraphics[trim=1cm 14.5cm 0cm 0.5cm, width=1\textwidth]{brief-05}}
 \end{center}
 \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Anpassen der Variablen-Labels}
+
+\begin{itemize}
+	\item Weitere wichtige Variablen
+
+\begin{description}
+\item[yourref] Fremde Briefreferenz 
+\item[yourmail] Fremdes Briefdatum
+\item[subject] Betreff
+\item[title] Titel
+\end{description}
+
+\end{itemize}
+
+\lstinputlisting[basicstyle=\ttfamily\footnotesize, firstline=5,lastline=13]{brief-06.tex}
+
+\end{frame}
+
+\begin{frame}[plain]
+\frametitle{Ergebnis}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-06}}
+\end{center}
+\end{frame}
+
+
+\begin{frame}[plain]
+\frametitle{Übersicht aus der KOMA-Script Dokumentation}
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{scrguide193}
+\end{center}
+\end{frame}
+
 
 \end{document}
