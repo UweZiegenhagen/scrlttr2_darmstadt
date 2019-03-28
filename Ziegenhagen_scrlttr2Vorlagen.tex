@@ -24,7 +24,7 @@
 
 \lstset{%
 		language={[LaTeX]TeX},%
-		morekeywords={opening, closing, setkomavar, usekomavar},%
+		morekeywords={opening, closing, ifkomavarempty, ifkomavar,setkomavar, usekomavar},%
     float=hbp,%
     basicstyle=\ttfamily,%\footnotesize, %
     identifierstyle=\color{colIdentifier}, %
@@ -93,6 +93,18 @@
 
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Klasse oder Umgebung}
+
+\begin{itemize}
+\item Traditionell: \texttt{scrlttr2} Dokumentenklasse
+\item Seit einiger Zeit: \texttt{scrletter} Paket
+\item MK empfiehlt Nutzung des Pakets
+\item Im weiteren Vortrag Nutzung der Klasse mit \texttt{pdflatex}
+\end{itemize}
+\end{frame}
+
 
 \begin{frame}[fragile]
 \frametitle{Ein minimaler Brief}
@@ -174,6 +186,14 @@
 	\item \lstinline|\usekomavar{Variable}| gibt Wert der Variablen zurück
 	\item \lstinline|\usekomavar*{Variable}| gibt das Label zurück
 \end{itemize}
+
+\textbf{Nutzen von Variablen}
+
+\begin{itemize}
+	\item \lstinline|\ifkomavar{Variable}{dann}{sonst}| Fallunterscheidung
+	\item \lstinline|\ifkomavarempty{Variable}{dann}{sonst}|  Fallunterscheidung
+\end{itemize}
+
 
 \end{frame}
 
@@ -274,21 +294,98 @@
 \end{center}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[containsverbatim]
 \frametitle{Anpassungen des Layouts}
 
 \begin{itemize}
 \item \texttt{scrlttr2} bietet bereits interne Möglichkeiten zur Design-Anpassung
 \begin{itemize}
 	\item \texttt{fromalign} Ausrichtung der Absender-Anschrift, Standard ist \enquote{left}, mögliche Werte \enquote{center}, \enquote{right}, \enquote{off}
-	\item Schriftart global oder pro Element
-	\item 
-	\item 
-	\item 
-	\item 
+	\item Schriftart global, ganz global oder pro Element
+	\item \enquote{geheime} Option: \texttt{egregdoesnotlikesansseriftitles} ändert Schriftart komplett auf Serifen-Schrift
 	\end{itemize}
 \end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{fromalign=center}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-07}}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{fromalign=right}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-08}}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{fromalign=off}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-09}}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{\texttt{\textbackslash usepackage\{sourcesanspro\}}}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-10}}
+\end{center}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{\texttt{\textbackslash usepackage\{tgchorus\}}\footnote{mit der \enquote{egreg}-Option}}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-11}}
+\end{center}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\texttt{\textbackslash usepackage[urw-garamond]\{mathdesign\}}\footnote{mit der \enquote{egreg}-Option}}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-12}}
+\end{center}
+\end{frame}
+
+\begin{frame}
+\frametitle{\texttt{\textbackslash usepackage[urw-garamond]\{mathdesign\}}\footnote{ohne \enquote{egreg}-Option}}
+
+\vspace*{-0.75cm}\begin{center}
+\fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-13}}
+\end{center}
+
+\end{frame}
+
+\begin{frame}[containsverbatim]
+\frametitle{firsthead/nexthead \& firstfoot/nextfoot}
+
+\begin{itemize}
+\item Kopf- und Fußzeile lassen sich individuell anpassen
+\item \verb|\setkomavar{firsthead}{Inhalt}|
+\item \verb|\setkomavar{firstfoot}{Inhalt}|
+\item \verb|\setkomavar{nexthead}{Inhalt}|
+\item \verb|\setkomavar{nextfoot}{Inhalt}|
+\end{itemize}
+\end{frame}
+
+
+
 
 
 
