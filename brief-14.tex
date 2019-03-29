@@ -1,0 +1,20 @@
+\documentclass[12pt,ngerman,DonaldA]{scrlttr2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel,blindtext,microtype}
+\usepackage[default]{sourcesanspro}
+
+\setkomavar{frombank}[IBAN]{DE98160500007512013019}
+
+\setkomavar{firstfoot}{%
+\usekomavar*{frombank}~\usekomavar{frombank}}
+
+\begin{document}
+\begin{letter}{Max Mustermann \\ Musterweg 1 \\ Musterstadt }
+\opening{Sehr geehrte Damen und Herren,}
+
+\blindtext[4]
+
+\closing{Mit freundlichen Grüßen}
+\end{letter}
+\end{document}

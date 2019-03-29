@@ -1,0 +1,29 @@
+\documentclass[12pt,ngerman,DonaldA]{scrlttr2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel,blindtext,microtype}
+\usepackage[default]{sourcesanspro}
+\usepackage{lastpage}
+
+\setkomavar{frombank}[IBAN]{DE98160500007512013019}
+\newkomavar[BIC]{BIC}
+\setkomavar{BIC}{WELADED2PMB}
+
+\setkomavar{firstfoot}{%
+\hrule\vspace*{0.5em}\noindent
+E-Mail: \usekomavar{fromemail} \hfill \usekomavar*{frommobilephone}~\usekomavar{frommobilephone} \newline
+\usekomavar*{frombank}:~\usekomavar{frombank}  \hfill \usekomavar*{BIC}:~\usekomavar{BIC}}
+
+\pagestyle{myheadings}
+\setkomavar{nextfoot}{}
+\setkomavar{nexthead}{\usekomavar{fromname} \hfill\thepage/\pageref{LastPage}}
+
+\begin{document}
+\begin{letter}{Max Mustermann \\ Musterweg 1 \\ Musterstadt }
+\opening{Sehr geehrte Damen und Herren,}
+
+\blindtext[4]
+
+\closing{Mit freundlichen Grüßen}
+\end{letter}
+\end{document}

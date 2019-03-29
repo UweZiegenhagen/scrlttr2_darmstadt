@@ -1,4 +1,4 @@
-%!TEX TS-program = XeLaTeX
+%!TEX TS-program = pdflatex
 % 2015-10-31
 \documentclass[DIN,parskip=half,fontsize=11pt,fromalign=right,fromrule=afteraddress,ngerman,enlargefirstpage=true]{scrlttr2}
  
@@ -8,21 +8,9 @@
 \usepackage{eso-pic}
 \usepackage{lastpage}
  
-\usepackage{ifxetex}
-\ifxetex
-   \usepackage{fontspec}%
-   \usepackage{polyglossia}%
-   \usepackage{navigator}
-   \setmainlanguage[spelling=new]{german}%
-	\setmainfont[ItalicFont={Source Sans Pro Italic},BoldFont={Source Sans Pro Bold},BoldItalicFont={Source Sans Pro Bold Italic}]{Source Sans Pro}%
-\else
-   \usepackage{babel}
-   \usepackage{navigator}
-\fi
- 
+\usepackage[default]{sourcesanspro}
+\usepackage{navigator}
 \embeddedfile[TeX code]{\jobname}{\jobname.tex}
- 
-\renewcommand{\familydefault}{\sfdefault}
  
 \firsthead{
 \textsc{Dr.~\usekomavar{fromname} \hfill \thepage/\pageref{LastPage}} 
