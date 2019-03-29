@@ -1,0 +1,4 @@
+\ProvidesFile{Donald.lco}[2019/03/29 scrlttr2 options]%
+  
+\setkomavar{fromname}{Donald Duck}
+\setkomavar{fromaddress}{Am Geldspeicher 1, 12345 Entenhausen}

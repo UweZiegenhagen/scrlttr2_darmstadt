@@ -1,0 +1,215 @@
+
+
+\ProvidesFile{sample.lco}[%
+  2005/12/17 letter class option]
+\@setplength{toaddrhpos}{27mm}
+\@setplength{toaddrwidth}{92mm}
+\@setplength{sigindent}{0mm}
+\setlength{\parindent}{0mm}
+
+
+\renewcommand*{\raggedsignature}{\raggedright}
+
+\KOMAoptions{%
+  fromrule=false,
+  numericaldate=true
+}
+
+\RequirePackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault}
+\RequirePackage[scaled=0.9]{helvet}
+\RequirePackage{microtype}
+\RequirePackage{ellipsis}
+\RequirePackage{fixltx2e}
+\RequirePackage{eurosym}
+\RequirePackage{pgf}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+\definecolor{lightblue}{rgb}{0.445,0.632,0.867}
+\definecolor{lightgray}{rgb}{0.7,0.7,0.7}
+
+% Define some new variable
+\newkomavar[Firma]{company}
+\newkomavar[Institut]{department}
+\newkomavar[Seminar]{seminar}
+\newkomavar[Bankleitzahl]{fromblz}
+\newkomavar[Konto-Nr.]{fromaccount}
+\newkomavar[Bearbeiter]{fromsachbearbeiter}
+\newkomavar[Raum]{fromroom}
+\newkomavar[Postanschrift]{postal}
+\newkomavar[Sitz]{local}
+\newkomavar[Verkehrsverbindungen]{connections}
+\newkomavar[Sprechzeiten]{office}
+
+% Set some variable, which are always the same
+\setkomavar{company}{Mooma GmbH}
+\setkomavar{department}{Controlling}
+\setkomavar{seminar}{noch was}
+\setkomavar{frombank}{Berliner Bank AG}
+\setkomavar{fromblz}{BLZ 100\,200\,300}
+\setkomavar{fromaccount}{Konto-Nr.\ 123\,4444\,700}
+\setkomavar{fromname}{Mooma GmbH}
+\setkomavar{postal}{%\\
+  Mooma GmbH\\
+  Bacherstr.\ 16\\
+  D--12345\ Neuburg
+}
+\setkomavar{backaddressseparator}{~\textbar~}
+\setlength{\textwidth}{12cm}
+
+\def\grau{0.4}
+\date{}
+
+% Start personal modification here
+\setkomavar{fromsachbearbeiter}{Max Mustermax}
+\setkomavar{fromurl}{http://www.max.de}
+\setkomavar{fromemail}{sw@max.de}
+\setkomavar{fromphone}{+49\,(0)30\,2093~9856}
+\setkomavar{fromfax}{+49\,(0)30\,2093~6546}
+\setkomavar{fromaddress}{Bacherstr.\ 16 \usekomavar{backaddressseparator} 12345 Neuburg}
+\setkomavar{myref}{}
+\setkomavar{fromroom}{407}
+\setkomavar{local}{%
+  Bacherstr.~16\\
+  Raum \usekomavar{fromroom}\\
+  D--12345~Neuburg
+}
+
+
+\setkomavar{connections}{%
+  S-Bahn Neu-Markt
+}
+\setkomavar{office}{%
+  mittwochs 12.30--13.30 Uhr  \\
+  und nach Vereinbarung
+}
+\setkomavar{subject}{Betreff}
+
+% Load graphicx package and header graphic.
+% NOTE: You may use \PassOptionsToPackage or set global
+%       options, if you have to pass options to it.
+\RequirePackage{eso-pic,graphicx}
+\AddToShipoutPicture*{%
+
+  \put(42,730){%
+			\scalebox{4}{\textcolor{lightblue}{\textbf{m}}}
+   }  
+
+  \put(80,720){%
+    \begin{tikzpicture}[rounded corners,ultra thick]
+			\shade[top color=lightblue,bottom color=yellow] (0,0) rectangle +(5.28,4);
+		\end{tikzpicture}
+   }
+  \put(79,730){%
+			\scalebox{4}{\textcolor{white}{\textbf{ooma}}}
+   }  
+
+  \put(130,770){%
+			\scalebox{1}{\textcolor{white}{\textbf{[mum:ma]}}}
+   }  
+
+  \put(250,720){%
+   \begin{tikzpicture}[rounded corners,ultra thick]
+			\shade[top color=lightgray,bottom color=yellow] (0,0) rectangle +(5.28,4);
+		\end{tikzpicture}
+   }  
+
+  \put(420,720){%
+    \begin{tikzpicture}[rounded corners,ultra thick]
+			\shade[top color=lightblue,bottom color=yellow] (0,0) rectangle +(5.28,4);
+		\end{tikzpicture}
+   }  
+
+
+}
+
+% Define new letter header
+\firsthead{
+
+  \vspace*{3cm}
+  \null\hfill
+  \parbox[t][\headheight][t]{4cm}{%
+    \raggedright
+    \color[gray]{\grau}%
+    {\sffamily%
+      \footnotesize\textbf{\usekomavar{company}}
+
+      \vspace*{.2cm}
+      \usekomavar{department}
+
+      \scriptsize
+      \vspace*{.2cm}
+      \usekomavar{seminar}
+
+      \vspace*{1.5cm}
+      \textbf{\usekomavar{fromsachbearbeiter}}
+      \vspace*{0.2cm}
+      \usekomavar{fromemail}\\
+      \usekomavar{fromurl}
+
+      \vspace*{1cm}
+      \textbf{Datum:}\\
+      \today
+
+      \vspace*{1cm}
+      \textbf{\usekomavar*{postal}}:\\
+      \usekomavar{postal}
+
+      Telefon \usekomavar{fromphone}\\
+      Telefax \usekomavar{fromfax}
+
+      \vspace*{1cm}
+      \textbf{Sitz}:\\
+      \usekomavar{local}
+
+      }\vspace*{0.5cm}
+    }%
+  }%
+
+  % Define new letter foot
+  \firstfoot{%
+  \null\hfill
+  \parbox[t][\headheight][b]{4cm}{% 'b' statt 't'
+    \raggedright
+    \color[gray]{\grau}%
+    {\sffamily%
+      \scriptsize{\textbf{\usekomavar*{connections}:}}\\
+      \usekomavar{connections}
+      {\textbf{\usekomavar*{office}:}}\\
+      \usekomavar{office}
+      {\textbf{Bankverbindung:}}\\
+      \usekomavar{fromaccount}\\
+      \usekomavar{frombank}\\
+      \usekomavar{fromblz}\\
+    }
+  }
+}
+
+
+\nexthead{
+
+
+  \put(400,770){\color[gray]{\grau}{\sffamily Moma GmbH}}
+  
+
+}
+
+  % Define new letter foot
+  \firstfoot{%
+  \null\hfill
+  \parbox[t][\headheight][b]{4cm}{% 'b' statt 't'
+    \raggedright
+    \color[gray]{\grau}%
+    {\sffamily%
+      \scriptsize{\textbf{\usekomavar*{connections}:}}\\
+      \usekomavar{connections}
+      {\textbf{\usekomavar*{office}:}}\\
+      \usekomavar{office}
+      {\textbf{Bankverbindung:}}\\
+      \usekomavar{fromaccount}\\
+      \usekomavar{frombank}\\
+      \usekomavar{fromblz}\\
+    }
+  }
+}

@@ -1,0 +1,13 @@
+\ProvidesFile{Donald.lco}[2019/03/29 scrlttr2 options]%
+  
+\setkomavar{fromname}{Donald Duck}
+\setkomavar{fromaddress}{Am Geldspeicher 1, 12345 Entenhausen}
+
+\setkomavar{customer}[Steuernummer]{12345}
+\setkomavar{yourref}{FinAmt-2017/1}
+\setkomavar{yourmail}{01.03.201900}
+\setkomavar{subject}{Steuerrückzahlung}
+
+\setkomavar{fromemail}{donald@duck.com}
+\setkomavar{frommobilephone}[Mobil]{+49171123456}
+
