@@ -9,5 +9,5 @@
 \setkomavar{subject}{Steuerrückzahlung}
 
 \setkomavar{fromemail}{donald@duck.com}
-\setkomavar{frommobilephone}[Mobil]{+49171123456}
+\setkomavar{frommobilephone}[Mobil:]{+49171123456}
 

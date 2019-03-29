@@ -1,5 +1,3 @@
-
-
 \ProvidesFile{sample.lco}[%
   2005/12/17 letter class option]
 \@setplength{toaddrhpos}{27mm}
