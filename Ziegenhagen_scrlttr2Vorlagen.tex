@@ -9,7 +9,8 @@
 \usepackage{csquotes}
 \usepackage{xcolor}
 
-
+\usepackage[]{attachfile}
+\newcommand{\ta}[1]{\textattachfile[color=1 0 0]{#1}{\textparagraph}}
 
 \usepackage[]{listings}
 
@@ -24,7 +25,7 @@
 
 \lstset{%
 		language={[LaTeX]TeX},%
-		morekeywords={opening, closing, ifkomavarempty, ifkomavar,setkomavar, usekomavar},%
+		morekeywords={opening, closing, ifkomavarempty, ifkomavar,setkomavar,ProvidesFile,newkomavar, usekomavar},%
     float=hbp,%
     basicstyle=\ttfamily,%\footnotesize, %
     identifierstyle=\color{colIdentifier}, %
@@ -95,12 +96,32 @@
 \end{frame}
 
 \begin{frame}
+\frametitle{Download der Beispiele}
+
+\begin{itemize}
+\item Die Beispiel-Dateien sind im PDF enthalten\footnote{mittels \texttt{attachfile}-Paket}
+\item In Adobe PDF Reader (und anderen?) PDF Viewern kann man auf die \textcolor{red}{\textparagraph} klicken
+\item Alternativ findet man alles unter \enquote{Anlagen}:
+
+
+\begin{center}
+\fbox{\includegraphics[width=0.51\textwidth]{folien}}
+\end{center}
+
+\item Der Quelltext der Folien ist ebenfalls im PDF \ta{\jobname.tex}
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
 \frametitle{Klasse oder Umgebung}
 
 \begin{itemize}
 \item Traditionell: \texttt{scrlttr2} Dokumentenklasse
 \item Seit einiger Zeit: \texttt{scrletter} Paket
-\item MK empfiehlt Nutzung des Pakets
+\item Markus Kohm selbt empfiehlt Nutzung des Pakets 
 \item Im weiteren Vortrag Nutzung der Klasse mit \texttt{pdflatex}
 \end{itemize}
 \end{frame}
@@ -114,7 +135,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Ergebnis}
+\frametitle{Ergebnis \ta{brief-01.tex}}
 
 \begin{center}
 \fbox{\includegraphics[trim=0cm 14cm 0cm 3cm, width=1\textwidth]{brief-01}}
@@ -205,7 +226,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Ergebnis}
+\frametitle{Ergebnis \ta{brief-02.tex}}
 
 \begin{center}
 \fbox{\includegraphics[trim=0cm 15cm 0cm 0cm, width=1\textwidth]{brief-02}}
@@ -220,7 +241,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Ergebnis}
+\frametitle{Ergebnis \ta{brief-03.tex}}
 
 \begin{center}
 \fbox{\includegraphics[trim=0cm 15cm 0cm 0cm, width=1\textwidth]{brief-03}}
@@ -235,7 +256,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Ergebnis}
+\frametitle{Ergebnis \ta{brief-04.tex}}
 
 \begin{center}
 \fbox{\includegraphics[trim=0cm 15cm 0cm 0cm, width=1\textwidth]{brief-04}}
@@ -250,7 +271,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Ergebnis}
+\frametitle{Ergebnis \ta{brief-05.tex}}
 
 \vspace*{-0.35cm}\begin{center}
 \fbox{\includegraphics[trim=1cm 14.5cm 0cm 0.5cm, width=1\textwidth]{brief-05}}
@@ -278,7 +299,7 @@
 \end{frame}
 
 \begin{frame}[plain]
-\frametitle{Ergebnis}
+\frametitle{Ergebnis \ta{brief-06.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-06}}
@@ -308,7 +329,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{fromalign=center}
+\frametitle{fromalign=center \ta{brief-07.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-07}}
@@ -318,7 +339,7 @@
 
 
 \begin{frame}
-\frametitle{fromalign=right}
+\frametitle{fromalign=right \ta{brief-08.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-08}}
@@ -328,7 +349,7 @@
 
 
 \begin{frame}
-\frametitle{fromalign=off}
+\frametitle{fromalign=off \ta{brief-09.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-09}}
@@ -337,7 +358,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{\texttt{\textbackslash usepackage\{sourcesanspro\}}}
+\frametitle{\texttt{\textbackslash usepackage\{sourcesanspro\}} \ta{brief-10.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-10}}
@@ -346,7 +367,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{\texttt{\textbackslash usepackage\{tgchorus\}}\footnote{mit der \enquote{egreg}-Option}}
+\frametitle{\texttt{\textbackslash usepackage\{tgchorus\}}\footnote{mit der \enquote{egreg}-Option} \ta{brief-11.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-11}}
@@ -356,7 +377,7 @@
 
 
 \begin{frame}
-\frametitle{\texttt{\textbackslash usepackage[urw-garamond]\{mathdesign\}}\footnote{mit der \enquote{egreg}-Option}}
+\frametitle{\texttt{\textbackslash usepackage[urw-garamond]\{mathdesign\}}\footnote{mit der \enquote{egreg}-Option} \ta{brief-12.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-12}}
@@ -364,7 +385,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{\texttt{\textbackslash usepackage[urw-garamond]\{mathdesign\}}\footnote{ohne \enquote{egreg}-Option}}
+\frametitle{\texttt{\textbackslash usepackage[urw-garamond]\{mathdesign\}}\footnote{ohne \enquote{egreg}-Option} \ta{brief-13.tex}}
 
 \vspace*{-0.75cm}\begin{center}
 \fbox{\includegraphics[trim=0cm 13.25cm 0cm 0.5cm, width=0.85\textwidth]{brief-13}}
@@ -374,7 +395,7 @@
 
 
 \begin{frame}[containsverbatim]
-\frametitle{Auslagern von Absender-Informationen}
+\frametitle{Auslagern von Absender-Informationen \ta{Donald.lco}}
 
 \begin{itemize}
 \item Absenderinformationen und Design-Anweisungen können in \texttt{.lco} ausgelagert werden
@@ -402,7 +423,7 @@
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Beispiel Bankverbindung in Fußzeile}
+\frametitle{Beispiel Bankverbindung in Fußzeile \ta{brief-14.tex}}
 
 \begin{itemize}
 	\item Nutzung der eingebauten Variablen \texttt{frombank}
@@ -415,7 +436,7 @@
 \end{frame}
 
 \begin{frame}[containsverbatim]
-\frametitle{Beispiel Bankverbindung}
+\frametitle{Beispiel Bankverbindung: Ausgabe}
 
 \begin{center}
 \fbox{\includegraphics[height=0.8\textheight]{brief-14}}
@@ -424,7 +445,7 @@
 \end{frame}
 
 \begin{frame}[containsverbatim]
-\frametitle{Beispiel Bankverbindung}
+\frametitle{Beispiel Bankverbindung: Ausgabe}
 
 \textbf{Ausgabe vergrößert}
 
@@ -435,7 +456,7 @@
 \end{frame}
 
 \begin{frame}[containsverbatim]
-\frametitle{Beispiel Bankverbindung mit BIC}
+\frametitle{Beispiel Bankverbindung mit BIC \ta{brief-15.tex}}
 
 \begin{itemize}
 \item IBAN reicht eigentlich, BIC oft verlangt
@@ -447,7 +468,7 @@
 \end{frame}
 
 \begin{frame}
-\frametitle{Komplexere Beispiele}
+\frametitle{Komplexere Beispiele \ta{kursbrief.tex} \ta{sample.lco}}
 
 \begin{center}
 \fbox{\includegraphics[width=1\textwidth]{mooma}}

@@ -173,8 +173,8 @@
     \color[gray]{\grau}%
     {\sffamily%
       \scriptsize{\textbf{\usekomavar*{connections}:}}\\
-      \usekomavar{connections}
-      {\textbf{\usekomavar*{office}:}}\\
+      \usekomavar{connections}\\
+      {\textbf{\usekomavar*{office}:}}\newline
       \usekomavar{office}
       {\textbf{Bankverbindung:}}\\
       \usekomavar{fromaccount}\\
